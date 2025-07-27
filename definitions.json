@@ -1,0 +1,18 @@
+{
+  "append": {
+    "definition": "Adds an element to the end of a list.",
+    "example": "my_list = [1, 2, 3]\nmy_list.append(4)\nprint(my_list)  # [1, 2, 3, 4]"
+  },
+  "len": {
+    "definition": "Returns the number of items in an object (string, list, tuple, etc.).",
+    "example": "text = \"hello\"\nprint(len(text))  # 5\n\nmy_list = [1, 2, 3]\nprint(len(my_list))  # 3"
+  },
+  "split": {
+    "definition": "Splits a string into a list using a specified delimiter.",
+    "example": "text = \"apple,banana,cherry\"\nresult = text.split(\",\")\nprint(result)  # ['apple', 'banana', 'cherry']"
+  },
+  "basil()": {
+    "definition": "the best function",
+    "example": "blah blah"
+  }
+}
