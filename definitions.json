@@ -1,18 +1,214 @@
 {
-  "append": {
-    "definition": "Adds an element to the end of a list.",
-    "example": "my_list = [1, 2, 3]\nmy_list.append(4)\nprint(my_list)  # [1, 2, 3, 4]"
+  "abs": {
+    "definition": "Returns the absolute value of a number. If the argument is a complex number, its magnitude is returned【384102953212286†L233-L237】.",
+    "example": "print(abs(-5))  # 5\nprint(abs(-3.2))  # 3.2"
+  },
+  "all": {
+    "definition": "Returns True if all elements of the iterable are true or if the iterable is empty【806690494849216†L248-L259】.",
+    "example": "print(all([1, 2, 3]))  # True\nprint(all([1, 0, 3]))  # False\nprint(all([]))  # True"
+  },
+  "any": {
+    "definition": "Returns True if any element of the iterable is true; returns False for an empty iterable【806690494849216†L276-L287】.",
+    "example": "print(any([0, 0, 3]))  # True\nprint(any([0, 0, 0]))  # False\nprint(any([]))  # False"
+  },
+  "enumerate": {
+    "definition": "Returns an iterator that yields pairs containing a count (from a start value, which defaults to 0) and the values obtained from iterating over an iterable【543768209333955†L100-L113】.",
+    "example": "fruits = ['apple', 'banana', 'cherry']\nfor index, value in enumerate(fruits, start=1):\n    print(index, value)\n# 1 apple\n# 2 banana\n# 3 cherry"
+  },
+  "filter": {
+    "definition": "Constructs an iterator from those elements of an iterable for which a function returns true; used to extract items that satisfy a condition【298190784088071†L114-L119】.",
+    "example": "numbers = [1, 2, 3, 4, 5]\n# keep only even numbers\nevens = list(filter(lambda x: x % 2 == 0, numbers))\nprint(evens)  # [2, 4]"
   },
   "len": {
-    "definition": "Returns the number of items in an object (string, list, tuple, etc.).",
-    "example": "text = \"hello\"\nprint(len(text))  # 5\n\nmy_list = [1, 2, 3]\nprint(len(my_list))  # 3"
+    "definition": "Returns the number of items in an object such as a string, list, tuple or other container.",
+    "example": "text = 'hello'\nprint(len(text))  # 5\nmy_list = [1, 2, 3]\nprint(len(my_list))  # 3"
+  },
+  "map": {
+    "definition": "Applies a function to every item of one or more iterables, returning an iterator of the results【806690494849216†L1256-L1263】.",
+    "example": "numbers = [1, 2, 3]\ndoubled = list(map(lambda x: x * 2, numbers))\nprint(doubled)  # [2, 4, 6]"
+  },
+  "max": {
+    "definition": "Returns the largest item in an iterable or the largest of two or more arguments. Optional key and default parameters control comparison and behaviour when the iterable is empty【806690494849216†L1269-L1279】.",
+    "example": "numbers = [3, 7, 2, 5]\nprint(max(numbers))  # 7\nprint(max(3, 7, 2, 5))  # 7"
+  },
+  "min": {
+    "definition": "Returns the smallest item in an iterable or the smallest of two or more arguments. Optional key and default parameters control comparison and behaviour when the iterable is empty【806690494849216†L1294-L1308】.",
+    "example": "numbers = [3, 7, 2, 5]\nprint(min(numbers))  # 2\nprint(min(3, 7, 2, 5))  # 2"
+  },
+  "open": {
+    "definition": "Opens a file and returns a file object. The mode argument controls whether the file is opened for reading ('r'), writing ('w'), appending ('a'), updating ('+'), and whether it is binary ('b') or text; the default is text read【806690494849216†L1364-L1382】.",
+    "example": "# Create and write to a file\nwith open('example.txt', 'w') as f:\n    f.write('Hello, world!')\n# Read the file back\nwith open('example.txt', 'r') as f:\n    content = f.read()\nprint(content)  # Hello, world!"
+  },
+  "range": {
+    "definition": "Generates a sequence of numbers starting from 0 (or the given start) up to but not including stop, optionally with a step. It is often used for looping【949077040939765†L120-L142】.",
+    "example": "for i in range(3):\n    print(i)\n# 0\n# 1\n# 2\nprint(list(range(2, 7, 2)))  # [2, 4, 6]"
+  },
+  "round": {
+    "definition": "Returns number rounded to a given number of decimal digits; if ndigits is omitted, it rounds to the nearest integer. Ties are rounded towards the even choice (banker’s rounding)【806690494849216†L1784-L1792】.",
+    "example": "print(round(3.14159, 2))  # 3.14\nprint(round(2.5))  # 2 (rounds to even)"
+  },
+  "sorted": {
+    "definition": "Returns a new sorted list from the items in an iterable. It accepts key and reverse parameters to customise the sort and is stable (preserves the order of equal elements)【806690494849216†L1864-L1881】.",
+    "example": "numbers = [3, 1, 4, 1, 5]\nprint(sorted(numbers))  # [1, 1, 3, 4, 5]\n# Sort strings by length\nwords = ['banana', 'fig', 'cherry']\nprint(sorted(words, key=len))  # ['fig', 'banana', 'cherry']"
+  },
+  "sum": {
+    "definition": "Sums items of an iterable and an optional start value (default 0) and returns the total; the start value must not be a string【806690494849216†L1945-L1954】.",
+    "example": "numbers = [1, 2, 3]\nprint(sum(numbers))  # 6\nprint(sum(numbers, 10))  # 16"
+  },
+  "zip": {
+    "definition": "Returns an iterator of tuples where the i‑th tuple contains elements from each of the input iterables; it stops when the shortest iterable is exhausted【64751828857898†L106-L121】.",
+    "example": "names = ['Alice', 'Bob', 'Charlie']\nages = [25, 30, 35]\npaired = list(zip(names, ages))\nprint(paired)  # [('Alice', 25), ('Bob', 30), ('Charlie', 35)]"
+  },
+  "reversed": {
+    "definition": "Returns a reverse iterator over a sequence; the sequence must support __reversed__() or the sequence protocol【806690494849216†L1777-L1782】.",
+    "example": "numbers = [1, 2, 3]\nrev = list(reversed(numbers))\nprint(rev)  # [3, 2, 1]"
+  },
+  "input": {
+    "definition": "Reads a line from standard input, converts it to a string (stripping the trailing newline) and returns it. If a prompt is provided, it is written before reading【806690494849216†L1054-L1067】.",
+    "example": "# The following line will display '--> ' and wait for user input\n# s = input('--> ')\n# print('You typed:', s)\n# Example output when user enters 'hello':\n# --> hello\n# You typed: hello"
+  },
+  "print": {
+    "definition": "Prints objects to a text stream (default sys.stdout), separated by sep and followed by end. Non‑keyword arguments are converted to strings. Optional sep, end, file and flush parameters must be supplied as keyword arguments【806690494849216†L1633-L1649】.",
+    "example": "print('a', 'b', 'c')  # a b c\nprint('a', 'b', 'c', sep='-')  # a-b-c\nprint('no newline', end='')" 
+  },
+  "type": {
+    "definition": "Returns the type (class) of an object. When called with three arguments, it creates a new type (rarely used).",
+    "example": "print(type(42))  # <class 'int'>\nprint(type('hello'))  # <class 'str'>"
+  },
+  "int": {
+    "definition": "Converts a number or a string to an integer. With a base argument, strings are interpreted in that numeric base【806690494849216†L1078-L1100】.",
+    "example": "print(int(3.8))  # 3\nprint(int('1010', 2))  # 10"
+  },
+  "str": {
+    "definition": "Returns a string version of an object. If no argument is given, returns the empty string.",
+    "example": "print(str(123))  # '123'\nprint(str(3.14))  # '3.14'"
+  },
+  "float": {
+    "definition": "Converts a string or a number to a floating‑point number. If no argument is given, returns 0.0.",
+    "example": "print(float('3.14'))  # 3.14\nprint(float(2))  # 2.0"
+  },
+  "bool": {
+    "definition": "Returns a Boolean value (True or False) based on the truth value of the argument. False is returned for falsey values and True for truthy values; bool is a subclass of int【806690494849216†L320-L327】.",
+    "example": "print(bool(0))  # False\nprint(bool([]))  # False\nprint(bool(1))  # True"
+  },
+  "list": {
+    "definition": "Creates a list from an iterable or returns an empty list. Lists are mutable sequences.",
+    "example": "print(list('abc'))  # ['a', 'b', 'c']\nprint(list(range(3)))  # [0, 1, 2]"
+  },
+  "dict": {
+    "definition": "Creates a dictionary. Can be called with a mapping or an iterable of key/value pairs, or with keyword arguments; returns an empty dictionary by default.",
+    "example": "print(dict([('a', 1), ('b', 2)]))  # {'a': 1, 'b': 2}\nprint(dict(a=1, b=2))  # {'a': 1, 'b': 2}"
+  },
+  "set": {
+    "definition": "Creates a set from an iterable or returns an empty set. Sets are unordered collections of unique elements.",
+    "example": "print(set([1, 2, 2, 3]))  # {1, 2, 3}\nprint(set('banana'))  # {'b', 'a', 'n'}"
+  },
+  "append": {
+    "definition": "Adds an element to the end of a list【754605575812527†L70-L74】.",
+    "example": "my_list = [1, 2, 3]\nmy_list.append(4)\nprint(my_list)  # [1, 2, 3, 4]"
+  },
+  "extend": {
+    "definition": "Extends the list by appending all the items from the given iterable【754605575812527†L74-L77】.",
+    "example": "my_list = [1, 2]\nmy_list.extend([3, 4])\nprint(my_list)  # [1, 2, 3, 4]"
+  },
+  "insert": {
+    "definition": "Inserts an item at a specified position in the list; the first argument is the index before which to insert【754605575812527†L79-L83】.",
+    "example": "my_list = [1, 3, 4]\nmy_list.insert(1, 2)\nprint(my_list)  # [1, 2, 3, 4]"
+  },
+  "remove": {
+    "definition": "Removes the first item from the list whose value is equal to the given element; raises ValueError if not found【754605575812527†L85-L87】.",
+    "example": "my_list = [1, 2, 3, 2]\nmy_list.remove(2)\nprint(my_list)  # [1, 3, 2]"
+  },
+  "pop": {
+    "definition": "Removes and returns the item at the given position in the list; if no index is specified, removes and returns the last item【754605575812527†L90-L94】.",
+    "example": "my_list = [1, 2, 3]\nitem = my_list.pop()\nprint(item)  # 3\nprint(my_list)  # [1, 2]"
+  },
+  "clear": {
+    "definition": "Removes all items from the list【754605575812527†L96-L98】.",
+    "example": "my_list = [1, 2, 3]\nmy_list.clear()\nprint(my_list)  # []"
+  },
+  "index": {
+    "definition": "Returns the index of the first item whose value is equal to the given element. Optional start and end arguments limit the search【754605575812527†L100-L107】.",
+    "example": "my_list = ['a', 'b', 'c', 'b']\nprint(my_list.index('b'))  # 1\nprint(my_list.index('b', 2))  # 3"
+  },
+  "count": {
+    "definition": "Returns the number of times a given element appears in the list【754605575812527†L110-L112】.",
+    "example": "my_list = [1, 2, 2, 3]\nprint(my_list.count(2))  # 2"
+  },
+  "sort": {
+    "definition": "Sorts the items of the list in place. Optional key and reverse parameters allow for customised ordering【754605575812527†L114-L117】.",
+    "example": "my_list = [3, 1, 4, 1, 5]\nmy_list.sort()\nprint(my_list)  # [1, 1, 3, 4, 5]\n# sort descending\nmy_list.sort(reverse=True)\nprint(my_list)  # [5, 4, 3, 1, 1]"
+  },
+  "reverse": {
+    "definition": "Reverses the elements of the list in place【754605575812527†L119-L121】.",
+    "example": "my_list = [1, 2, 3]\nmy_list.reverse()\nprint(my_list)  # [3, 2, 1]"
+  },
+  "copy": {
+    "definition": "Returns a shallow copy of the list【754605575812527†L122-L125】.",
+    "example": "original = [1, 2, [3, 4]]\nshallow = original.copy()\nprint(shallow)  # [1, 2, [3, 4]]"
+  },
+  "get": {
+    "definition": "For dictionaries, returns the value for key if key is in the dictionary, else returns default (None if not provided)【912609507111978†L4762-L4766】.",
+    "example": "d = {'a': 1, 'b': 2}\nprint(d.get('a'))  # 1\nprint(d.get('c', 0))  # 0"
+  },
+  "keys": {
+    "definition": "Returns a dynamic view of a dictionary’s keys【912609507111978†L4773-L4776】.",
+    "example": "d = {'x': 1, 'y': 2}\nprint(list(d.keys()))  # ['x', 'y']"
+  },
+  "values": {
+    "definition": "Returns a dynamic view of a dictionary’s values【912609507111978†L4819-L4822】.",
+    "example": "d = {'x': 1, 'y': 2}\nprint(list(d.values()))  # [1, 2]"
+  },
+  "items": {
+    "definition": "Returns a dynamic view of a dictionary’s key/value pairs【912609507111978†L4768-L4771】.",
+    "example": "d = {'x': 1, 'y': 2}\nprint(list(d.items()))  # [('x', 1), ('y', 2)]"
+  },
+  "pop_dict": {
+    "definition": "For dictionaries, removes the item with the given key and returns its value; if the key is not present, returns the default value if provided or raises a KeyError【912609507111978†L4778-L4782】.",
+    "example": "d = {'a': 1, 'b': 2}\nvalue = d.pop('a')\nprint(value)  # 1\nprint(d)  # {'b': 2}" 
+  },
+  "popitem": {
+    "definition": "Removes and returns a (key, value) pair from the dictionary. Pairs are returned in LIFO order (last inserted first)【912609507111978†L4784-L4794】.",
+    "example": "d = {'x': 1, 'y': 2}\nitem = d.popitem()\nprint(item)  # e.g. ('y', 2)\nprint(d)  # remaining items"
+  },
+  "setdefault": {
+    "definition": "If key is in the dictionary, returns its value. Otherwise, inserts key with a default value and returns that default【912609507111978†L4803-L4807】.",
+    "example": "d = {}\nprint(d.setdefault('a', 0))  # 0\nprint(d)  # {'a': 0}"
+  },
+  "update": {
+    "definition": "Updates the dictionary with key/value pairs from another mapping or iterable of pairs. Existing keys are overwritten; keyword arguments can also be used【912609507111978†L4808-L4817】.",
+    "example": "d = {'a': 1}\nd.update({'b': 2})\nprint(d)  # {'a': 1, 'b': 2}\nd.update(c=3, d=4)\nprint(d)  # {'a': 1, 'b': 2, 'c': 3, 'd': 4}"
+  },
+  "clear_dict": {
+    "definition": "Removes all items from the dictionary, leaving it empty.",
+    "example": "d = {'a': 1, 'b': 2}\nd.clear()\nprint(d)  # {}"
   },
   "split": {
-    "definition": "Splits a string into a list using a specified delimiter.",
-    "example": "text = \"apple,banana,cherry\"\nresult = text.split(\",\")\nprint(result)  # ['apple', 'banana', 'cherry']"
+    "definition": "Splits a string into a list using a specified delimiter. If sep is not provided, runs of whitespace are treated as a single separator; maxsplit limits the number of splits【912609507111978†L2042-L2073】.",
+    "example": "text = 'apple,banana,cherry'\nprint(text.split(','))  # ['apple', 'banana', 'cherry']\ntext = '1 2 3'\nprint(text.split())  # ['1', '2', '3']"
   },
-  "basil()": {
-    "definition": "the best function",
-    "example": "blah blah"
+  "join": {
+    "definition": "Concatenates the strings in an iterable, using the string on which the method is called as the separator【912609507111978†L1885-L1890】.",
+    "example": "words = ['Hello', 'world']\nresult = ' '.join(words)\nprint(result)  # 'Hello world'"
+  },
+  "lower": {
+    "definition": "Returns a copy of the string with all cased characters converted to lowercase【912609507111978†L1898-L1901】.",
+    "example": "text = 'Hello World'\nprint(text.lower())  # 'hello world'"
+  },
+  "upper": {
+    "definition": "Returns a copy of the string with all cased characters converted to uppercase【912609507111978†L2280-L2285】.",
+    "example": "text = 'Hello World'\nprint(text.upper())  # 'HELLO WORLD'"
+  },
+  "strip": {
+    "definition": "Returns a copy of the string with leading and trailing characters removed; by default removes whitespace【912609507111978†L2194-L2200】.",
+    "example": "text = '   hello   '\nprint(text.strip())  # 'hello'\nprint('www.example.com'.strip('cmowz.'))  # 'example'"
+  },
+  "replace": {
+    "definition": "Returns a copy of the string with all occurrences of a substring replaced by another. If count is given, only the first count occurrences are replaced【912609507111978†L1978-L1983】.",
+    "example": "text = 'banana'\nprint(text.replace('a', 'o'))  # 'bonono'\nprint(text.replace('a', 'o', 1))  # 'bonana'"
+  },
+  "splitlines": {
+    "definition": "Returns a list of the lines in the string, breaking at line boundaries. Line breaks are not included unless keepends is true; splitting an empty string returns an empty list【912609507111978†L2101-L2175】.",
+    "example": "text = 'first line\nsecond line\n'\nprint(text.splitlines())  # ['first line', 'second line']\nprint(text.splitlines(True))  # ['first line\n', 'second line\n']"
   }
 }
